@@ -1,12 +1,12 @@
 <!-- Unit 12 Project
 Requirements
-[  ] Two Interactive Drop-down Inputs 
-[  ] Standard Animation
-[  ] Custom Animation
-[  ] Include Three Images
+[ X ] Two Interactive Drop-down Inputs 
+[ X ] Standard Animation
+[ X] Custom Animation
+[ X ] Include Three Images
 
 Select ONE Additional Feature to Add  
-[ no ] Feature 1 - Google Font
+[ yes ] Feature 1 - Google Font
 [ no ] Feature 2 - Chain jQuery Methods
 [ no ] Feature 3 - .mouseover() & .mouseOut() Methods
 [ no ] Feature 4 - :hover Feature 
@@ -19,75 +19,132 @@ Select ONE Additional Feature to Add
     <meta charset="utf-8" />
     <title>Unit 12 Project</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Sixtyfour&family=Smooch+Sans:wght@100..900&family=Supermercado+One&display=swap" rel="stylesheet">
   <body>
-    <h1>Quiz About [Me]</h1>
+    <h1 class="font">Quiz About ⭐LOLA⭐</h1>
     <hr />
     <!-- Movie Question -->
-    <form id="movie-form">
+    <form id="weight-form">
       <label>
-        🎥 What is my favorite movie?
-        <select id="movie-answer">
-          <option value="movie1">movie 1</option>
-          <option value="movie2">movie 2</option>
-          <option value="movie3">movie 3</option>
-          <option value="movie4">movie 4</option>
+        🎥 How much does Lola weigh
+        <select id="weight-answer">
+          <option value="weight1">22 pounds</option>
+          <option value="weight2">10 pounds</option>
+          <option value="weight3">14 pounds</option>
+          <option value="weight4">100 pounds</option>
         </select>
       </label>
-      <button type="submit">Check Movie Answer</button>
+      <button type="submit">Check Answer</button>
     </form>
-    <div id="movie-result">
-      <p id="movie-text"></p>
+    <div id="weight-result">
+      <p id="weight-text"></p>
+      <img class = "lola1"src="https://github.com/LaGuardia-WebDev-2024/12-p-unit-12-project-ElChau0804/blob/main/F2976CB2-1445-4A15-9752-5F8B9C443968_4_5005_c.jpeg?raw=true" width="200">
     </div>
-    <hr />
+  
     <!-- Book Question -->
-    <form id="book-form">
+    <form id="food-form">
       <label>
-        📖 What is my favorite book?
-        <select id="book-answer">
-          <option value="book1">book 1</option>
-          <option value="book2">book 2</option>
-          <option value="book3">book 3</option>
-          <option value="book4">book 4</option>
+      What is Lola's favorite food?
+        <select id="food-answer">
+          <option value="food1">steak</option>
+          <option value="food2">diabetic special canned dog food</option>
+          <option value="food3">peanuts</option>
+          <option value="food4">chicken and veggies</option>
         </select>
       </label>
-      <button type="submit">Check Book Answer</button>
+      <button type="submit">Check Answer</button>
     </form>
-    <div id="book-result">
-      <p id="book-text"></p>
+    <div id="food-result">
+      <p id="food-text"></p>
+      <img class="lola2"src="https://github.com/LaGuardia-WebDev-2024/12-p-unit-12-project-ElChau0804/blob/main/37A64BBF-2D54-41E5-8407-7E844E8E3FAA_1_105_c.jpeg?raw=true" width=200>
+    </div>
+     <form id="age-form">
+      <label>
+        How old is Lola?
+        <select id="age-answer">
+          <option value="age1">3 yrs old</option>
+          <option value="age2">I dont know</option>
+          <option value="age3">6 yrs old</option>
+          <option value="age4">5 yrs old</option>
+        </select>
+      </label>
+      <button type="submit">Check Answer</button>
+    </form>
+    <div id="age-result">
+      <p id="age-text"></p>
+      <img class="lola3"src="https://github.com/LaGuardia-WebDev-2024/12-p-unit-12-project-ElChau0804/blob/main/C7A0FF5D-4D01-4410-9322-636F22B6CF0A_4_5005_c.jpeg?raw=true" width="200">
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
-      
+   
+   $(".lola1").hide();
+   $(".lola2").hide();
+   $(".lola3").hide();
+
       //========================Movie Question jQuery Code
-      $("#movie-form").on("submit", function (event) {
+      $("#weight-form").on("submit", function (event) {
         event.preventDefault();
 
-        var $answer = $("#movie-answer");
+        var $answer = $("#weight-answer");
         var answer = $answer.val();
+    
+    
+        
 
-        if (answer === "movie1") {
-          $("#movie-text").text("YESSSS!");
-        } 
+        if (answer === "weight2") {
+          $("#weight-text").text("YESSSS!!(but she was 22...)");
+           $(".lola1").show(2000);}
         else {
-          $("#movie-text").text("Try Again!");
+          $("#weight-text").text("Try Again!");
         }
       });
 
       //=======================Book Question jQuery Code
-      $("#book-form").on("submit", function (event) {
+      $("#food-form").on("submit", function (event) {
         event.preventDefault();
 
-        var $answer = $("#book-answer");
+        var $answer = $("#food-answer");
         var answer = $answer.val();
 
-        if (answer === "book1") {
-          $("#book-text").text("YESSSS!");
+        if (answer === "food3") {
+          $("#food-text").text("YESSSS!");
+           $(".lola2").show(2000);
+          
         } 
         else {
-          $("#book-text").text("Try Again!");
+          $("#food-text").text("Try Again!");
+        }
+        // $("#food-answer").click(function() {
+          $(".lola2").animate({
+            width: "300px",
+            height: "300px",
+            marginLeft:"200px",
+            marginTop:"100px",
+            rotate:"75deg",
+          })
+
+      // });
+        
+      });
+      $("#age-form").on("submit", function (event) {
+        event.preventDefault();
+
+        var $answer = $("#age-answer");
+        var answer = $answer.val();
+
+        if (answer === "age4") {
+          $("#age-text").text("yes I think so");
+           $(".lola3").show(2000);
+        } 
+        else {
+          $("#age-text").text("Try Again!");
         }
       });
+
+      
+
       
     </script>
   </body>
